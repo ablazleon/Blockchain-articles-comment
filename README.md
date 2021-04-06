@@ -1,5 +1,10 @@
 # Lectura del articulo que describe Bitcoin
 
+# Lectura del articulo que describe el ordenamiento temporal de eventos
+
+
+# Lectura del articulo que describe Bitcoin
+
 Se ha de leer el articulo inicial que describe Bitcoin  ( https://bitcoin.org/bitcoin.pdf ).  Realizar un breve resumen de los incentivos para unirse desde la teoría de juegos así como el algoritmo de consenso. 
 
 A continuación, tras leer el artículo inicial que describe bitcoin, resumo, primero, en general qué plantea el artículo, después, desde un punto de vista de teoría de juegos los incentivos para unirse. Finalmente, se describe el algoritmo de consenso., en relación a lo que se describe en este artículo, claro.
