@@ -2,6 +2,7 @@
 
 # 2 Lectura del articulo que describe el ordenamiento temporal de eventos
 
+# 3 Leer el articulo sobre el protocolo de acuerdo de Paxos por Leslie Lamport
 
 ----------
 
@@ -28,6 +29,10 @@ esta ordenación parcial de eventos, permitiendo una "ordenación total de event
 
 Una vez se ha resumido como el artículo describe en qué consiste la Ordenación de Eventos y cómo se puede propiciar, se relaciona esto con lo sucedido con la convocatoria de elecciones en la CAM, básicamente un caso en el que dos procesos se ejecutan, emiten eventos sin consultarse y es necesario que se acuerde una ordenación de estos pues la consistencia de la información depende de ello. Como se refleja sobre todo en el artículo del Confidencial los procesos y los eventos que ocurren en la CAM son los siguientes: proceso P, al día siguiente de presentarse la moción de Murcia, a mediodía, se presenta en la Asamblea de la CAM dos mociones de censura de PSOE y Más Madrid, evento p1, y esta entra trámite por la asamblea. Sin embargo, luego se conoce que el gobierno de la CAM, proceso Q, a las 11:45 ha acordado la disolución de la cámara, docuemtno firmado por la Presidenta, evento q1, que se promulgará al día siguiente en el BOCAM, evento q2. Así, se puede observar el comportamiento anómalo descrito por Lamport: P admite p2, pues no sabe que ha sido disuelto. Gracias, a que los eventos han sido marcados con un timestamps genérico, en este caso relojes físicos, se puede establecer una ordenación total de eventos y así hacerse consistente un cierto estado de la ejecución de estos procesos. El artículo de la Cadena Ser, recoge el resultado de la ejecución de estos procesos, básicamente que la ley defiende la potestad de un presidente de acordar la disolución de la cámara. En caso contrario, si hubiera que esperar a que la sentencia estuviese recogida en el boletín, todas las disoluciones se prodrían negar con una rápida moción de censura.
 
-Si la orden es necesaria para que el estado actual sea consistente 
+# 3 Leer el articulo sobre el protocolo de acuerdo de Paxos por Leslie Lamport
 
-describe que se pueden ordenar eventos de forma total en base al ordenamiento lógico. En el caso de las elecciones de la CAM se produce un problema en cuanto al ordenamiento porque primero se anunció que se habían propuesto una moción de censura, pero antes se había propuesto la disolución del parlamento. 
+Leer el articulo https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf para comprender la base actual de los algoritmos de acuerdo distribuidos. 
+
+En este artículo se describe un protocolo de acuerdo distribuido muy robusto propuestpo pro Lamport en 1988, base de muchos protocolos de acuerdo implementados. Para descirbirlo, Lamprot primero describe el problema del cosnenso en Paxos y luego propone este protocolo como solución.
+
+El problema en Paxos, es cómo orquestrar un conjutno de leyes consistentes, aunque los miembros de la asamblea puedan fallar. La solución que propone Lamport es un protocolo
