@@ -33,6 +33,8 @@ Una vez se ha resumido como el artículo describe en qué consiste la Ordenació
 
 Leer el articulo https://lamport.azurewebsites.net/pubs/lamport-paxos.pdf para comprender la base actual de los algoritmos de acuerdo distribuidos. 
 
-En este artículo se describe un protocolo de acuerdo distribuido muy robusto propuestpo pro Lamport en 1988, base de muchos protocolos de acuerdo implementados. Para descirbirlo, Lamprot primero describe el problema del cosnenso en Paxos y luego propone este protocolo como solución.
+En este artículo se describe un protocolo de acuerdo distribuido. Este protocolo propuestpo pro Lamport en 1988 es base de muchos protocolos de acuerdo implementados. Para descirbirlo, Lamprot primero describe el problema del consenso en la ficticia Paxos y luego propone este protocolo como solución.
 
-El problema en Paxos, es cómo orquestrar un conjutno de leyes consistentes, aunque los miembros de la asamblea puedan fallar. La solución que propone Lamport es un protocolo
+El problema en Paxos, es cómo orquestrar un conjunto de leyes consistentes, aunque los miembros de la asamblea puedan fallar. Es decir, necesitan de un protocolo de consenso asíncrono y bizantino. La solución que propone Lamport es un protocolo o una idea de protocolo basada en dos fases y rondas asíncronas: en una priemra fase, se elige al líder, es decir a aquel nodo que propondrá un cambio en el estado. En cada ronda, cada nodo primero propone un ID, el más grande que tenga guardado y lo difunde al resto de nodos. Cada nodo aceptará el Id más grande que haya recibido, devolviendo un ACK o promesa de que ignorará el resto de valores menores. Pasado un cierto tiempo, el (o los líderes), que hayan recibido promesas, enviarán una petición de 
+
+
